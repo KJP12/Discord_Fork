@@ -1,34 +1,58 @@
-domain: "https://discordbots.co.uk"
+domain: https://discordbots.co.uk
 baseurl: ""
-url: "https://discordbots.co.uk"
+url: https://discordbots.co.uk
 encoding: utf-8
 
+plugins:
+  - jekyll-sitemap
+
 include: 
-  - '_pages'
-  - '_pages/api'
-  - '_pages/api/bots'
-  - '_pages/api/guilds'
+  - _pages
+  - _pages/api
+  - _pages/api/bots
+  - _pages/api/servers
 
 sass:
   sass_dir: _sass
   style: compressed
 
 collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
   bots:
     output: true
     permalink: /:collection/:name/
-  guilds:
+  servers:
     output: true
-    permalink: /servers/:name/
+    permalink: /:collection/:name/
+  bans:
+    output: true
+    permalink: /:collection/:name/
 
 defaults:
   - scope:
       path: ""
-      type: "bots"
+      type: docs
     values:
-      layout: "botpage"
+      layout: item
+      type: docs
+      layout: docs
   - scope:
       path: ""
-      type: "guilds"
+      type: bots
     values:
-      layout: "serverpage"
+      layout: item
+      type: bots
+  - scope:
+      path: ""
+      type: servers
+    values:
+      layout: item
+      type: servers
+  - scope:
+      path: ""
+      type: bans
+    values:
+      layout: item
+      type: bans

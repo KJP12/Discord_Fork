@@ -1,13 +1,14 @@
 ---
-botname: Discord Fork
-description: The public Discord lists you fork to add your content to or find something you desire.
+description: Discord Bots is an open source website where you can obtain bots for your server, with GitHub integration
 permalink: "/"
-layout: botlist
+layout: list
 search: true
 spinner: true
+type: bots
 ---
 
 <section class="container">
-  <div class="rowcard center-text" id="allbots">
+  <div class="center-text card-container" id="list" data-list-type="bots">
   </div>
 </section>
+{% include botmodal.html %}

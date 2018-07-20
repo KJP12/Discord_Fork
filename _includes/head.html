@@ -1,14 +1,15 @@
 <!-- Main content to SEO -->
-{% if page.botname %}
-  <title>{{ page.botname }}</title>
-  <meta property="og:title" content="{{ page.botname }}" />
+{% if page.pagename %}
+  <title>{{ page.pagename }} - {{ site.data.config.categories[page.type].pagename }}</title>
 {% else %}
-  <title>{{ page.servername }}</title>
-  <meta property="og:title" content="{{ page.servername }}" />
+  <title>{{ site.data.config.categories[page.type].pagename }}</title>
 {% endif %}
+
+<meta property="og:title" content="{{ page.pagename }}" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-<meta property="og:description" content="{{ page.description }}" />
+<meta property="og:description" content="{{ page.description }} - discordbots.co.uk" />
+<meta name="description" content="{{ page.description }} - discordbots.co.uk" />
 
 {% if page.avatar %}
 <meta property="og:image" content="{{ page.avatar }}" />
@@ -24,7 +25,8 @@
 
 <!-- Style and JS stuff -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
+<link href="https://modesta.alexflipnote.xyz/css/modesta.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/custom.css">
 
 <script src="{{ site.url }}/assets/js/smoothscroll.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="{{ site.url }}/assets/js/jarallax.min.js" type="text/javascript" charset="utf-8"></script>
